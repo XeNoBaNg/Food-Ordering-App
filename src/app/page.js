@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Header from "../component/layout/Header.js"
 import Hero from "../component/layout/Hero.js"
 import HomeMenu from "../component/layout/HomeMenu.js"
 import SectionHeader from "@/component/layout/SectionHeader.js";
@@ -7,7 +6,6 @@ import SectionHeader from "@/component/layout/SectionHeader.js";
 export default function Home() {
   return (
     <>
-      <Header />
       <Hero />
       <HomeMenu />
       <section className="my-16">
@@ -39,9 +37,6 @@ export default function Home() {
           <a className="text-4xl underline text-gray-600" href="tel:+91235456789">+91 235 456 789</a>
         </div>
       </section>
-      <footer className="border-t p-8 text-center text-gray-500 mt-a6">
-        &copy; 2025 all rights reserved XeNo
-      </footer>
     </>
   );
 }
