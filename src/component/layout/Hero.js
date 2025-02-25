@@ -25,7 +25,7 @@ export default function Hero() {
                         <Right />       
                     </button>
                     <button
-                        className="flex gap-2 py-2 items-center text-gray-600 font-semibold"
+                        className="flex border-0 gap-2 py-2 items-center text-gray-600 font-semibold"
                     >
                         Learn More
                         <Right />

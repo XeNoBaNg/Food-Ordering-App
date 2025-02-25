@@ -1,4 +1,5 @@
 import { Schema, model, models } from "mongoose";
+import bcrypt from "bcrypt";
 
 const UserSchema = new Schema(
     {
@@ -15,5 +16,12 @@ const UserSchema = new Schema(
     { timestamps: true }
 );
 
-const User = models?.User || model("User", UserSchema);
+UserSchema.pre("save", function (next) {
+    if (!this.isModified("password")) return next();
+    const salt = bcrypt.genSaltSync(10);
+    this.password = bcrypt.hashSync(this.password, salt);
+    next();
+});
+
+const User = models.User || model("User", UserSchema, "users");
 export default User;
